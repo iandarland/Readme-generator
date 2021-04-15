@@ -30,7 +30,7 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-const generateMarkdown = data =>{
+function generateMarkdown(data) {
   return(`# ${data.title}
 ${generateBadge.renderLicenseBadge(data.license)} 
 
