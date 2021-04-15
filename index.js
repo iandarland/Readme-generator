@@ -55,55 +55,13 @@ const questions = [
     }
   ]
   
-  init = function(){
+  init = () =>{
     inquirer
     .prompt(questions)
     .then((response) =>{
-    const filename = `${response.title.toLowerCase().split(' ').join('')}.md`;
-    fs.writeFile(filename, myReadme(response), (err)=>
+    fs.writeFile('README.md', generateMarkdown.generateMarkdown(response), (err)=>
         err ? console.log(err) : console.log('success!'))
   })
 }
   
-  
-const myReadme = data =>{
-      return(`# ${data.title}
-${generateBadge.renderLicenseBadge(data.license)} 
-
-## Description
-
-${data.description}
-
-## Table of contents
-
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Tests](#tests)
-${generateBadge.renderLicenseLink(data.license)}
-- [Questions](#questions)
-
-## Installation
-
-${data.install}
-
-## Contributing
-
-${data.contributing}
-
-## Tests
-
-${data.tests}
-
-${generateBadge.renderLicenseSection(data.license)}
-
-## Questions
-
-Email: ${data.email}
-
-Github: https://www.github.com/${data.username}
-      `)
-}
-
 init()
