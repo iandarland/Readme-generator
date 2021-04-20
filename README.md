@@ -1,5 +1,5 @@
 # Readme Generator
-![ReadmeWalkthrough](https://im6.ezgif.com/tmp/ezgif-6-1abeab38de56.gif) 
+![ReadmeWalkthrough](./assets/Hnet-image (1).gif) 
 
 ## Description
 
